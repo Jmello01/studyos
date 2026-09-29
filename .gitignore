@@ -1,0 +1,17 @@
+# Sistemas operacional / IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/
+
+# Segredos Locais
+.env
+
+# Backend (Maven)
+backend/target/
+
+# Frontend (Angular)
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
