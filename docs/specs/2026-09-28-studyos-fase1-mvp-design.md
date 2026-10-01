@@ -408,7 +408,7 @@ com.studyos
 | Controller | `@WebMvcTest` + MockMvc | 400 com `errors`, 404, 409, status de criação `201` + `Location` |
 | Repository / dashboard | `@DataJpaTest` + Testcontainers (PostgreSQL real) | agregações por matéria, área e dia; datas sem dados |
 
-Cada recurso tem um arquivo `backend/http/<recurso>.http` (HTTP Client do IntelliJ) para testes manuais.
+Testes manuais da API são feitos com o **Bruno** (cliente HTTP gratuito, coleção em arquivos de texto versionada em `backend/api/`), porque o IntelliJ Community não inclui o HTTP Client. Requisições `GET` simples também podem ser feitas no navegador ou com `Invoke-RestMethod`.
 
 ---
 

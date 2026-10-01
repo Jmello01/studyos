@@ -44,7 +44,6 @@ studyos/
 ├── .env                               Task 2 (NÃO vai para o Git)
 ├── backend/                           Task 3 (gerado pelo start.spring.io)
 │   ├── pom.xml, mvnw, mvnw.cmd, .mvn/
-│   ├── http/health.http
 │   └── src/
 │       ├── main/java/com/studyos/StudyosApplication.java
 │       ├── main/resources/application.yaml
@@ -265,7 +264,7 @@ git commit -m "chore: adiciona PostgreSQL 17 via Docker Compose"
 **Arquivos:**
 - Criar (gerado): `backend/**`
 - Modificar: `backend/src/main/resources/application.yaml`
-- Criar: `backend/src/main/resources/db/migration/.gitkeep`, `backend/http/health.http`
+- Criar: `backend/src/main/resources/db/migration/.gitkeep`
 - Teste: `backend/src/test/java/com/studyos/StudyosApplicationTests.java` (gerado)
 
 **Interfaces:**
@@ -368,16 +367,9 @@ docker compose start
 
 Rode de novo (▶). Esperado no log: `Tomcat started on port 8080` e `Started StudyosApplication`. O Flyway pode avisar que não há migrations, e isso é normal.
 
-- [ ] **Passo 7: Verificar o health pelo HTTP Client do IntelliJ**
+- [ ] **Passo 7: Verificar o health (navegador ou PowerShell)**
 
-Crie `backend/http/health.http`:
-
-```http
-### Saúde da aplicação (inclui a conexão com o banco)
-GET http://localhost:8080/actuator/health
-```
-
-Clique no ▶ ao lado do `GET`. Esperado: `200` com `"status": "UP"` e `"db": { "status": "UP", "details": { "database": "PostgreSQL" … } }`. (Ponto de atenção 1: se você vir o banco `UP` mas errar a porta, estaria falando com o PostgreSQL do Windows. Confira que a URL no log é `:5433`.)
+O IntelliJ Community não tem HTTP Client. Abra `http://localhost:8080/actuator/health` no navegador, ou rode `Invoke-RestMethod http://localhost:8080/actuator/health | ConvertTo-Json -Depth 5`. Esperado: `200` com `"status": "UP"` e `"db": { "status": "UP", "details": { "database": "PostgreSQL" … } }`. (Ponto de atenção 1: se você vir o banco `UP` mas errar a porta, estaria falando com o PostgreSQL do Windows. Confira que a URL no log é `:5433`.)
 
 - [ ] **Passo 8: Rodar os testes de novo e commitar**
 
