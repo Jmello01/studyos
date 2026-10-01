@@ -1,0 +1,19 @@
+<div class="shell">
+  <aside class="sidebar">
+    <span class="brand">StudyOS</span>
+
+    <nav class="nav" aria-label="Navegação principal">
+      @for (item of navItems; track item.path) {
+      <a class="nav-link" [routerLink]="item.path" routerLinkActive="active">{{ item.label }}</a>
+      }
+    </nav>
+
+    <button type="button" class="theme-toggle" (click)="themeService.toggle()">
+      {{ themeService.theme() === 'dark' ? 'Tema claro' : 'Tema escuro' }}
+    </button>
+  </aside>
+
+  <main class="content">
+    <router-outlet />
+  </main>
+</div>
