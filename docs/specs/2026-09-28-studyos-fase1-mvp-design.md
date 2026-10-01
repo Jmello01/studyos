@@ -112,11 +112,11 @@ Convenções: `snake_case`; PK `bigint generated always as identity`; `created_a
 | Coluna | Tipo | Regras |
 |---|---|---|
 | id | bigint PK | |
-| name | varchar(100) | not null, **unique** |
+| name | varchar(100) | not null, **unique sem diferenciar maiúsculas** (índice único em `lower(name)`, de modo que "Cloud" e "CLOUD" colidem) |
 | description | text | null |
 | color | varchar(7) | null, formato `#RRGGBB` |
 | icon | varchar(50) | null |
-| position | int | not null default 0 (ordem de exibição) |
+| position | int | not null default 0 (ordem de exibição; ao criar sem informar, vai para o fim da lista) |
 | archived | boolean | not null default false |
 | created_at, updated_at | timestamptz | |
 
@@ -462,7 +462,7 @@ frontend/src/app/
 | 4 — Sessões | Registrar e listar estudo | V5, R6–R9 | Formulário e histórico |
 | 5 — Planejamento | Semana-modelo e semana concreta | V6, R10–R14 | Grade semanal |
 | 6 — Dashboard | Métricas e gráficos | Consultas agregadas, streak | Dashboard, period-picker, Chart.js |
-| 7 — PWA e acabamento | App instalável, revisão de responsividade | — | `@angular/pwa`, ícones |
+| 7 — PWA e acabamento | App instalável, revisão de responsividade, **README vitrine** (o que é o StudyOS, ícones/badges das tecnologias, screenshots, depois o passo a passo para rodar) | — | `@angular/pwa`, ícones |
 
 Cada fatia é uma **branch** (`feat/areas`, …) que termina em **Pull Request** no GitHub, revisado e mergeado na `main`.
 
