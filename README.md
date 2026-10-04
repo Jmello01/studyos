@@ -59,7 +59,7 @@ O projeto é construído em **fatias verticais**: cada funcionalidade vai do ban
 | 6 | Dashboard e métricas | |
 | 7 | PWA e acabamento | |
 
-## 🛠 Tecnologias
+##  Tecnologias
 
 **Em uso hoje**
 
@@ -150,7 +150,7 @@ cd frontend
 ng test --watch=false
 ```
 
-## 🔌 API de Áreas (já disponível)
+##  API de Áreas (já disponível)
 
 | Método | Rota | O que faz |
 |---|---|---|
@@ -162,7 +162,7 @@ ng test --watch=false
 
 As áreas **não são apagadas**: elas são arquivadas, para nunca perder o histórico de estudo.
 
-## 🗂 Estrutura do repositório
+##  Estrutura do repositório
 
 ```
 studyos/
@@ -177,7 +177,7 @@ studyos/
 
 > A documentação em `docs/` está em português.
 
-## 🗺 Roadmap
+##  Roadmap
 
 - [x] **Fase 0** · Fundação (Git, Docker, Spring Boot, Angular, layout)
 - [ ] **Fase 1 · MVP** · Áreas, matérias, tópicos, planejamento, sessões e dashboard básico
