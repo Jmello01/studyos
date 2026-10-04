@@ -49,7 +49,7 @@ O projeto é construído em **fatias verticais**: cada funcionalidade vai do ban
 
 | Fatia | O que é | Situação |
 |---|---|-|
-| 0 | Fundação: repositório, banco no Docker, backend e frontend rodando, layout e tema claro/escuro | ✅ Pronta |
+| 0 | Fundação: repositório, banco no Docker, backend e frontend rodando, layout e tema claro/escuro |  Pronta |
 | 1 | **Áreas**: API REST (backend) |  Pronta |
 | 1 | **Áreas**: telas em Angular |  Próxima |
 | 2 | Matérias | |
